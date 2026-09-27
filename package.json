@@ -1,0 +1,66 @@
+{
+  "name": "@iankiku/anytranscript-mcp",
+  "version": "0.2.0",
+  "description": "MCP server for anytranscript — transcribe any video URL (YouTube, Instagram, TikTok, and 1,800+ sites), one or many at once, as a tool call for Claude or any MCP client. Every run is traced to a local SQLite file with a small web dashboard to browse it.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Ian Kiku <iankiku@gmail.com>",
+  "bin": {
+    "anytranscript-mcp": "dist/server.js",
+    "anytranscript-mcp-ui": "dist/ui.js"
+  },
+  "main": "./dist/server.js",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "scripts": {
+    "build": "tsc && chmod +x dist/server.js dist/ui.js",
+    "dev": "tsc --watch",
+    "test": "npm run build && node --test test/*.test.js",
+    "prepublishOnly": "npm run build && node --test test/*.test.js"
+  },
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "model-context-protocol",
+    "transcript",
+    "transcription",
+    "whisper",
+    "yt-dlp",
+    "youtube",
+    "tiktok",
+    "instagram",
+    "agent-tools",
+    "llm-tools",
+    "claude",
+    "batch",
+    "sqlite",
+    "tracing",
+    "dashboard"
+  ],
+  "dependencies": {
+    "@iankiku/anytranscript": "^1.0.0",
+    "@modelcontextprotocol/sdk": "^1.30.1",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.5",
+    "typescript": "^5.6.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iankiku/anytranscript-mcp.git"
+  },
+  "homepage": "https://github.com/iankiku/anytranscript-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/iankiku/anytranscript-mcp/issues"
+  }
+}
